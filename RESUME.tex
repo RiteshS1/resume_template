@@ -1,0 +1,243 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{cmap} % ATS: must load before fontenc/fonts
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+%----------FONT OPTIONS----------
+\usepackage[default]{sourcesanspro}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% PDF metadata
+\hypersetup{pdftitle={Ritesh Sharma - Resume}, pdfauthor={Ritesh Sharma}, pdfsubject={Full-Stack Engineer Resume}, pdfkeywords={React, Next.js, TypeScript, Node.js, Full-Stack Developer, Frontend Developer}}
+
+% ATS: icons stay visible in the PDF but are hidden from text extraction (no junk characters)
+\newcommand{\atsicon}[1]{\pdfliteral direct{/Span <</ActualText <FEFF>>> BDC}#1\pdfliteral direct{EMC}}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+% ---- DRY helper macros (added) ----
+\newcommand{\companyLink}[1]{\href{#1}{\raisebox{-0.1\height}{\atsicon{\faExternalLink*}}}}
+\newcommand{\roleHeader}[3]{\textbf{\large\underline{#1}} #2 $|$ \large\underline{#3}}
+\newcommand{\skillLine}[2]{\textbf{\small{#1:}}{ \small{#2}} \\}
+\newcommand{\achievementLine}[2]{\textbf{\small{#1 -- }}{ \small{#2}} \\}
+% Project link: visible text + icon (icon hidden from ATS text extraction)
+\newcommand{\projLink}[2]{\href{#1}{\small{#2}}}
+\newcommand{\certItem}[2]{$\sbullet[.75] \hspace{0.1cm}$ \href{#1}{#2} \\}
+
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Ritesh Sharma} \\ \vspace{4pt}
+    \href{tel:+91-9343143604}{ \raisebox{-0.1\height}{\atsicon{\faPhone}}\ \underline{+91-9343143604} ~}
+    \href{mailto:riteshs.connect@gmail.com}{\raisebox{-0.2\height}{\atsicon{\faEnvelope}}\ \underline{riteshs.connect@gmail.com}} ~
+    \href{https://www.linkedin.com/in/ritesh-sharma-8477a424a/}{\raisebox{-0.2\height}{\atsicon{\faLinkedinSquare}}\ \underline{LinkedIn}} ~
+    \href{https://github.com/RiteshS1}{\raisebox{-0.2\height}{\atsicon{\faGithub}}\ \underline{GitHub}} ~
+    \href{https://x.com/delphic_RS}{\raisebox{-0.2\height}{\atsicon{\faTwitter}}\ \underline{X}} ~
+    \href{https://riteshh.in/}{\raisebox{-0.2\height}{\atsicon{\faExternalLink}}\ \underline{riteshh.in}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{SUMMARY}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{Full-stack Engineer with 1+ year of experience at product startups (Omniful, ZenStreet.ai) and on freelance projects, working with React, Next.js and TypeScript. Experienced in frontend architecture, REST API integration, performance optimization, SEO and AI-powered SaaS development. Demonstrated ability to independently build, optimize, and deploy scalable software products.}}
+ \end{itemize}
+
+\vspace{-8pt}
+
+% %-----------EDUCATION-----------
+% \section{EDUCATION}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Madhav Institute of Technology and Science}{November 2022 - May 2026}
+%       {Bachelor of Engineering - Information Technology}{Gwalior, Madhya Pradesh}
+%   \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{EXPERIENCE}
+  \resumeSubHeadingListStart
+
+\resumeProjectHeading
+      {\roleHeader{Omniful}{\companyLink{https://www.omniful.ai/}}{Frontend Intern (PPO)}}{Jul 2025 -- Feb 2026}
+      \resumeItemListStart
+      \vspace{4pt}
+\resumeItem{Spearheaded the notification system revamp by developing a custom \textbf{Toast Manager} with instance-level dismissal and stacking support, while refactoring hooks to improve API response handling and internationalization.}
+        \resumeItem{Introduced \textbf{Husky} and \textbf{i18n} to improve developer experience and localization, while collaborating with cross-functional teams on the migration from Redux to TanStack Query for server-state management.}
+        \resumeItem{Orchestrated a 3D TMS driver timeline on the \textbf{Google Maps SDK}, using geolocation data and dynamic polylines for shortest-path routing and real-time tracking.}
+        \resumeItem{Investigated and resolved critical production \textbf{Sentry} anomalies and shipped frontend features across production releases.}
+      \resumeItemListEnd
+
+\vspace{-12pt}
+
+    \resumeProjectHeading
+    {\roleHeader{ZenStreet.ai}{\companyLink{https://drive.google.com/file/d/1bwjZKNVyhDEXVpumeLbVCwrKdesdX_1Y/view?usp=sharing}}{SDE Intern (Remote)}}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+            \vspace{4pt}
+       \resumeItem{Architected frontend features for the core SaaS MVP, resolving high-priority tickets on Linear through code reviews, debugging and cross-functional collaboration.}
+        \resumeItem{Integrated \textbf{RESTful APIs} to streamline client-server communication, improve data flow \& enhance codebase maintainability.}
+        \resumeItem{Redesigned the SaaS landing page UI/UX with a responsive layout across mobile, tablet and desktop breakpoints.}
+      \resumeItemListEnd
+\vspace{-2pt}
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+    \resumeSubHeadingListStart
+
+\resumeProjectHeading
+      {\textbf{\large{\underline{AISEO}}} $|$ \large{\underline{Next.js 15, TypeScript, Supabase, Groq, Gemini, Razorpay, Tailwind}}}{\projLink{https://aiseo-by-ritesh.vercel.app/}{{\atsicon{\faExternalLink}} Live}\hspace{6pt}\projLink{https://github.com/RiteshS1/AISEO-by-Ritesh}{{\atsicon{\faGithub}} Repo}}\\
+      \resumeItemListStart
+                  \vspace{8pt}
+        \resumeItem{Engineered an AI Engine Optimization (AIEO) SaaS that scores brands on a \textbf{22-point} visibility checklist and a \textbf{5-stage} human-in-the-loop approval workflow on Discord.}
+        \resumeItem{Reduced Time to First Byte by \textbf{87\%} (2.25s to 280ms) via edge-cached static generation and middleware-level routing.}
+        \resumeItem{Implemented \textbf{3 pricing tiers} on Razorpay, verifying each payment server-side with HMAC-SHA256.}
+        \resumeItem{Deployed an AI support agent answering in under \textbf{400ms}, with automatic Groq-to-Gemini failover for provider outages.}
+      \resumeItemListEnd
+
+      \vspace{-12pt}
+
+      \resumeProjectHeading
+      {\textbf{\large{\underline{React Mastery}}} $|$ \large{\underline{React 19, TypeScript, AWS Cognito, Socket.IO, Express, Tailwind}}}{\projLink{https://react-utility-library.vercel.app/}{{\atsicon{\faExternalLink}} Live}\hspace{6pt}\projLink{https://github.com/RiteshS1/React_Utility_Library}{{\atsicon{\faGithub}} Repo}}\\
+      \resumeItemListStart
+                  \vspace{8pt}
+        \resumeItem{Launched a learning platform with \textbf{20+ interactive sandboxes} and a custom hooks toolkit covering React 19 Fiber, DOM mechanics and concurrent rendering.}
+        \resumeItem{Added a Socket.IO backend for real-time progress notifications across \textbf{4 learning tracks}.}
+        \resumeItem{Implemented secure authentication and authorization using AWS Cognito, JWT validation, and Express.js middleware to protect API endpoints and manage authenticated sessions.}
+        \resumeItem{Load-tested with Artillery, simulating a \textbf{3,250-user traffic spike} to evaluate event-loop stability under concurrent load.}
+      \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Madhav Institute of Technology and Science}{Nov 2022 -- May 2026}
+      {B.Tech - Information Technology}{Gwalior, Madhya Pradesh}
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \skillLine{Languages}{TypeScript, JavaScript, Python, C++}
+      \skillLine{Frontend}{React, Next.js, Svelte, Three.js, TanStack Query, Redux, Tailwind CSS, HTML5, CSS}
+      \skillLine{Backend}{Node.js, Express, Python FastAPI, REST APIs, WebSockets (Socket.IO)}
+      \skillLine{Testing \& DevOps}{Playwright (E2E and Unit Testing), Docker, CI/CD, GitHub Actions}
+      \skillLine{Database \& Cloud}{PostgreSQL, Supabase, MongoDB, AWS (S3, Cognito), Redis}
+      \skillLine{AI \& Developer Tools}{LLMs (Groq, Gemini, OpenAI), Ollama, Claude Code, Vercel, Sentry, Git, Figma}
+    }}
+ \end{itemize}
+
+\vspace{-12pt}
+
+
+
+%-----------ACHIEVEMENTS-----------
+\section{ACHIEVEMENTS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \item \small{
+      \achievementLine{English Proficiency }{C2 Grade (Proficient), CEFR aligned, 76/100 on EF SET | IELTS-equivalent: \textbf{8.5–9.0}}
+      \achievementLine{5-Star on HackerRank }{Achieved a Gold rating for solving C++ coding challenges.}
+      \achievementLine{Open Source }{Contributions during Hacktoberfest and GirlScript Summer of Code (GSSoC) 2024.}
+    }
+ \end{itemize}
+
+\end{document}
